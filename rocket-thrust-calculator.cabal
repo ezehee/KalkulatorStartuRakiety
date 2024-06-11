@@ -1,0 +1,32 @@
+cabal-version:       3.4
+name:                rocket-thrust-calculator
+version:             0.1.0.0
+build-type:          Simple
+author:              Krzysztof Magnuszewski
+maintainer:          kmezehe@gmail.com
+license:             MIT
+license-file:        LICENSE
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     RocketThrust
+                     , GraphGenerator
+  build-depends:       base >=4.7 && <5
+                     , containers
+                     , text
+                     , Chart >= 1.9.3 && < 2
+                     , Chart-cairo
+                     , data-default-class
+  default-language:    Haskell2010
+
+executable rocket-thrust-calculator
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <5
+                     , rocket-thrust-calculator
+                     , threepenny-gui >= 0.9.0.0
+                     , Chart >= 1.9.3 && < 2
+                     , Chart-cairo
+                     , data-default-class
+  default-language:    Haskell2010
+
